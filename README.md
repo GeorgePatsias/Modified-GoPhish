@@ -20,7 +20,8 @@ Spin up the containers
 docker-compose up -d
 ```
 
-## Sidenote: If the above command shows any errors its because it didn't mount gophish.db properly. To fix that, comment out from the docker-compose.yml file the mount line of gophish.db and spin up the containers. After that enter the gophish container with `docker exec -it gophish bash` and copy the database outside of the container. `cat /opt/gophish/gophish.db | base64 -e` copy the base64 code. Go outside of the container now and paste the decoded base64 `cd config` `echo <BASE64_HERE> | base64 -d >> gophish.db` `docker-compose up -d`
+## Sidenote:
+If the above command shows any errors its because it didn't mount gophish.db properly. To fix that, comment out from the docker-compose.yml file the mount line of gophish.db and spin up the containers. After that enter the gophish container with `docker exec -it gophish bash` and copy the database outside of the container. `cat /opt/gophish/gophish.db | base64 -e` copy the base64 code. Go outside of the container now and paste the decoded base64 `cd config` `echo <BASE64_HERE> | base64 -d >> gophish.db` `docker-compose up -d`
 
 To find the GoPhish password check the container logs
 ```bash
