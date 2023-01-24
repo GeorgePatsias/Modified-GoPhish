@@ -16,6 +16,7 @@ services:
       - STAGING=false #optional
     volumes:
       - ./swag_config:/config
+      - ./config/default.conf:/config/nginx/site-confs/default.conf
       - swag-logs:/config/log/nginx
     ports:
       - 80:80
