@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  swag:
+    image: linuxserver/swag:latest
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - URL=<DOMAIN_HERE>
+      - VALIDATION=http
+      - DNSPLUGIN=cloudflare #optional
+      - STAGING=false #optional
+    volumes:
+      - ./swag_config:/config
+      - swag-logs:/config/log/nginx
+    ports:
+      - 80:80
+      - 443:443
+      - 3333:3333
+    restart: unless-stopped
+
+  gophish:
+    image: gophish_mod:latest
+    container_name: gophish
+    expose:
+      - "80"
+      - "443"
+      - "3333"
+    volumes:
+      - gophish-data:/data
+      - ./config/gophish.db:/opt/gophish/gophish.db
+      - ./config/config.json:/opt/gophish/config.json
+      - ./swag_config/keys/letsencrypt/fullchain.pem:/opt/gophish/<DOMAIN_HERE>.crt
+      - ./swag_config/keys/letsencrypt/privkey.pem:/opt/gophish/<DOMAIN_HERE>.key
+    restart: unless-stopped
+
+volumes:
+  gophish-data:
+  swag-logs:
