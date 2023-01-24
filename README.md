@@ -34,7 +34,7 @@ To find the GoPhish password check the container logs
 docker-compose logs --tail=100 -f gophish
 ```
 
-Access the management site of GoPhish by navigating to:
+Access the management site of GoPhish by navigating to (username: admin):
 ```bash
 https://<DOMAIN_HERE>:3333
 ```
