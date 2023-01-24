@@ -1,5 +1,5 @@
 # Modified GoPhish
-This is a GoPhish repository
+This is a GoPhish repository with its arguments and parameters obfuscated and altered.
 
 ## Installation
 Clone repository
