@@ -6,6 +6,7 @@ Clone repository
 ```bash
 git clone https://github.com/GeorgePatsias/Modified-GoPhish.git
 cd Modified-GoPhish
+sudo apt-get install docker docker-compose
 ```
 Change the variable in files with name `<DOMAIN_HERE>` by entering your domain name e.g. `example.com` (config.json, default.conf, docker-compose.yml)
 
