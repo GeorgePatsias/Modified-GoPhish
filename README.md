@@ -16,7 +16,7 @@ docker build -f Dockerfile -t gophish_mod .
 ```
 
 ## Usage
-Spin up the nginx - letsencrypt container to generate the SSL certificates
+Spin up the nginx - letsencrypt container to generate the SSL certificates (wait couple of minutes)
 ```bash
 docker-compose up -d swag
 ```
