@@ -16,9 +16,13 @@ docker build -f Dockerfile -t gophish_mod .
 ```
 
 ## Usage
-Spin up the containers
+Spin up the nginx - letsencrypt container to generate the SSL certificates
 ```bash
-docker-compose up -d
+docker-compose up -d swag
+```
+Spin up the gophish container
+```bash
+docker-compose up -d gophish
 ```
 
 To find the GoPhish password check the container logs
